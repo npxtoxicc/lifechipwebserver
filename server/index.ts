@@ -83,7 +83,7 @@ async function main() {
 
     httpServer.listen(
       Number(port),
-      "127.0.0.1",
+      "0.0.0.0",
       () => {
         log(`serving on port ${port}`);
       }
