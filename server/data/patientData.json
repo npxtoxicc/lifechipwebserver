@@ -1,0 +1,101 @@
+{
+  "patient": {
+    "id": 1,
+    "name": "Sarah Johnson",
+    "dob": "05/12/1985",
+    "bloodType": "O Positive",
+    "healthId": "MED-78541269"
+  },
+  "medicalHistory": [
+    {
+      "id": 1,
+      "condition": "Type 2 Diabetes",
+      "diagnosedDate": "2018",
+      "notes": "Controlled with medication and diet"
+    },
+    {
+      "id": 2,
+      "condition": "Hypertension",
+      "diagnosedDate": "2015",
+      "notes": "Controlled with daily medication"
+    },
+    {
+      "id": 3,
+      "condition": "Appendectomy",
+      "diagnosedDate": "Procedure: 2010",
+      "notes": "No complications"
+    }
+  ],
+  "allergies": [
+    {
+      "id": 1,
+      "name": "Penicillin",
+      "severity": "Severe"
+    },
+    {
+      "id": 2,
+      "name": "Shellfish",
+      "severity": "Moderate"
+    },
+    {
+      "id": 3,
+      "name": "Latex",
+      "severity": "Mild"
+    }
+  ],
+  "medicalScans": [
+    {
+      "id": 1,
+      "type": "Brain MRI",
+      "date": "03/15/2023",
+      "fileUrl": "/api/files/brain-mri.pdf"
+    },
+    {
+      "id": 2,
+      "type": "Chest CT Scan",
+      "date": "01/22/2023",
+      "fileUrl": "/api/files/chest-ct.pdf"
+    }
+  ],
+  "emergencyContacts": [
+    {
+      "id": 1,
+      "name": "Robert Johnson",
+      "relationship": "Husband",
+      "phone": "+15551234567"
+    },
+    {
+      "id": 2,
+      "name": "Emily Johnson",
+      "relationship": "Daughter",
+      "phone": "+15557896541"
+    }
+  ],
+  "primaryDoctor": {
+    "id": 1,
+    "name": "Dr. Michael Chen, MD",
+    "specialty": "Endocrinology",
+    "hospital": "Central Medical Center",
+    "phone": "+15551236789"
+  },
+  "medications": [
+    {
+      "id": 1,
+      "name": "Metformin",
+      "dosage": "500mg",
+      "schedule": "Twice daily with meals"
+    },
+    {
+      "id": 2,
+      "name": "Lisinopril",
+      "dosage": "10mg",
+      "schedule": "Once daily in morning"
+    },
+    {
+      "id": 3,
+      "name": "Atorvastatin",
+      "dosage": "20mg",
+      "schedule": "Once daily in evening"
+    }
+  ]
+}
