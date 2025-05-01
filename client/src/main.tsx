@@ -6,7 +6,7 @@ import { queryClient } from "./lib/queryClient";
 
 // Add meta tags for mobile optimization
 const metaTitle = document.createElement('title');
-metaTitle.textContent = 'Medical Info Card';
+metaTitle.textContent = 'LifeChip';
 document.head.appendChild(metaTitle);
 
 // Add Google Fonts and Material Icons
