@@ -12,7 +12,7 @@ const Header: React.FC = () => {
             <span className="material-icons text-primary">health_and_safety</span>
           </div>
           <h1 className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-            Medical Info Card
+            LifeChip
           </h1>
         </div>
         
