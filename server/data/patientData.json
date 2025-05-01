@@ -1,8 +1,8 @@
 {
   "patient": {
     "id": 1,
-    "name": "Banu Aliyeva",
-    "dob": "31/07/2010",
+    "name": "Sarah Johnson",
+    "dob": "05/12/1985",
     "bloodType": "O Positive",
     "healthId": "MED-78541269"
   },
@@ -60,23 +60,23 @@
   "emergencyContacts": [
     {
       "id": 1,
-      "name": "Ali Aliyev",
-      "relationship": "Father",
-      "phone": "+994702355570"
+      "name": "Robert Johnson",
+      "relationship": "Husband",
+      "phone": "+15551234567"
     },
     {
       "id": 2,
-      "name": "Leyla Aliyeva",
-      "relationship": "Mother",
-      "phone": "+994702355570"
+      "name": "Emily Johnson",
+      "relationship": "Daughter",
+      "phone": "+15557896541"
     }
   ],
   "primaryDoctor": {
     "id": 1,
-    "name": "Dr. Ugur, MD",
+    "name": "Dr. Michael Chen, MD",
     "specialty": "Endocrinology",
     "hospital": "Central Medical Center",
-    "phone": "+99400000000"
+    "phone": "+15551236789"
   },
   "medications": [
     {
