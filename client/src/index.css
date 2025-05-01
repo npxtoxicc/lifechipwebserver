@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 50% 98%;
+  --foreground: 210 20% 10%;
+  --muted: 210 20% 95%;
+  --muted-foreground: 210 10% 40%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 210 20% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 210 20% 10%;
+  --border: 210 20% 90%;
+  --input: 210 20% 90%;
+  --primary: 200 70% 50%; /* Soft medical blue */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 160 50% 50%; /* Mint green */
+  --secondary-foreground: 0 0% 100%;
+  --accent: 210 30% 96%;
+  --accent-foreground: 210 30% 20%;
+  --destructive: 354 70% 54%; /* SOS red color */
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 210 20% 80%;
+  --radius: 1.25rem; /* Increased border radius for softer look */
+  
+  /* Custom variables for medical card */
+  --warning: 40 90% 60%; /* Updated amber for warnings */
+  
+  /* Neumorphism shadows */
+  --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-large: 0 8px 20px rgba(0, 0, 0, 0.12);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-neumorph: 12px 12px 24px rgba(166, 180, 200, 0.2), -12px -12px 24px rgba(255, 255, 255, 0.9);
+  --shadow-neumorph-inset: inset 6px 6px 12px rgba(166, 180, 200, 0.2), inset -6px -6px 12px rgba(255, 255, 255, 0.9);
+}
+
+.dark {
+  --background: 210 30% 10%;
+  --foreground: 210 5% 90%;
+  --muted: 210 30% 15%;
+  --muted-foreground: 210 5% 70%;
+  --popover: 210 30% 8%;
+  --popover-foreground: 210 5% 90%;
+  --card: 210 30% 12%;
+  --card-foreground: 210 5% 90%;
+  --border: 210 30% 20%;
+  --input: 210 30% 20%;
+  --primary: 200 70% 40%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 160 50% 40%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 210 30% 15%;
+  --accent-foreground: 210 5% 90%;
+  --destructive: 354 70% 54%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 210 30% 30%;
+  
+  /* Neumorphism shadows for dark mode */
+  --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-large: 0 8px 20px rgba(0, 0, 0, 0.3);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-neumorph: 8px 8px 16px rgba(10, 15, 20, 0.3), -8px -8px 16px rgba(40, 50, 60, 0.1);
+  --shadow-neumorph-inset: inset 4px 4px 8px rgba(10, 15, 20, 0.3), inset -4px -4px 8px rgba(40, 50, 60, 0.1);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased text-foreground;
+    font-family: 'Poppins', sans-serif;
+    background-color: hsl(var(--background));
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='hsl(210, 50%, 95%, 0.1)' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight text-foreground;
+  }
+
+  h1 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h2 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h3 {
+    @apply text-lg md:text-xl;
+  }
+}
+
+/* Container layout */
+.container {
+  max-width: 700px !important;
+  margin: 0 auto;
+}
+
+/* Card animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom styles for the medical card */
+.section-card {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-small);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-fill-mode: both;
+  opacity: 0;
+  margin-bottom: 1.5rem;
+}
+
+.section-card:nth-child(1) { animation-delay: 0.1s; }
+.section-card:nth-child(2) { animation-delay: 0.2s; }
+.section-card:nth-child(3) { animation-delay: 0.3s; }
+.section-card:nth-child(4) { animation-delay: 0.4s; }
+.section-card:nth-child(5) { animation-delay: 0.5s; }
+.section-card:nth-child(6) { animation-delay: 0.6s; }
+.section-card:nth-child(7) { animation-delay: 0.7s; }
+
+.section-card:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-4px);
+}
+
+.section-card h2 {
+  @apply font-semibold;
+}
+
+/* Neumorphic styles */
+.neumorphic {
+  border-radius: var(--radius);
+  background-color: hsl(var(--background));
+  box-shadow: var(--shadow-neumorph);
+}
+
+.neumorphic-inset {
+  border-radius: var(--radius);
+  background-color: hsl(var(--accent));
+  box-shadow: var(--shadow-neumorph-inset);
+}
+
+/* Patient profile picture */
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background-color: hsl(var(--muted));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-medium);
+  border: 4px solid hsl(var(--background));
+  overflow: hidden;
+}
+
+/* SOS button styling */
+.sos-button {
+  transition: all 0.3s ease;
+  background: hsl(var(--destructive));
+  box-shadow: 0 0 20px rgba(255, 76, 76, 0.3);
+  animation: pulse 2s infinite;
+  font-weight: 600;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 76, 76, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 76, 76, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 76, 76, 0);
+  }
+}
+
+.sos-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 76, 76, 0.5);
+}
+
+.sos-button:active {
+  transform: scale(0.98);
+}
+
+/* Action buttons */
+.action-button {
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
+}
+
+.action-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Icons */
+.material-icons {
+  vertical-align: middle;
+}
+
+/* Contact cards */
+.contact-card {
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Badge styles */
+.badge {
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Toggle theme button */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 50;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(var(--background));
+  box-shadow: var(--shadow-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(15deg);
+}
+
+/* Footer styles */
+.footer {
+  background-color: hsl(var(--muted));
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+  margin-top: 5rem;
+  border-top: 1px solid hsl(var(--border));
+}
